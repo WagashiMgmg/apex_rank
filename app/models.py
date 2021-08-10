@@ -36,23 +36,20 @@ class Item(models.Model):
 
     # サンプル項目4 浮動小数点
     sample_4 = models.FloatField(
-        verbose_name='サンプル項目4 浮動小数点',
+        verbose_name='平均ダメージ, average damage',
         blank=True,
         null=True,
     )
 
-    # サンプル項目5 固定小数点
-    sample_5 = models.DecimalField(
-        verbose_name='サンプル項目5 固定小数点',
-        max_digits=5,
-        decimal_places=2,
+    sample_5 = models.FloatField(
+        verbose_name='K/D',
         blank=True,
         null=True,
     )
 
     # サンプル項目6 ブール値
     sample_6 = models.BooleanField(
-        verbose_name='サンプル項目6 ブール値',
+        verbose_name='神に誓って嘘が無い場合はチェックを入れる',
     )
 
     # サンプル項目7 日付
@@ -71,13 +68,32 @@ class Item(models.Model):
 
     # サンプル項目9 選択肢（固定）
     sample_9_choice = (
-        (1, '選択１'),
-        (2, '選択２'),
-        (3, '選択３'),
-    )
+        (0, 'ブロンズ4, B4'),
+        (1, 'ブロンズ3, B3'),
+        (2, 'ブロンズ2, B2'),
+        (3, 'ブロンズ1, B1'),
+        (4, 'シルバー4, S4'),
+        (5, 'シルバー3, S3'),
+        (6, 'シルバー2, S2'),
+        (7, 'シルバー1, S1'),
+        (8, 'ゴールド4, G4'),
+        (9, 'ゴールド3, G3'),
+        (10, 'ゴールド2, G2'),
+        (11, 'ゴールド1, G1'),
+        (12, 'プラチナ4, P4'),
+        (13, 'プラチナ3, P3'),
+        (14, 'プラチナ2, P2'),
+        (15, 'プラチナ1, P1'),
+        (16, 'ダイア4, D4'),
+        (17, 'ダイア3, D3'),
+        (18, 'ダイア2, D2'),
+        (19, 'ダイア1, D1'),
+        (20, 'マスター, Master'),
+        (21,'プレデター, predator'),
+        )
 
     sample_9 = models.IntegerField(
-        verbose_name='サンプル項目9_選択肢（固定）',
+        verbose_name='ランク(rank)',
         choices=sample_9_choice,
         blank=True,
         null=True,

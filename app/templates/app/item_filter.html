@@ -1,6 +1,7 @@
 {% extends "./_base.html" %}
 {% block content %}
     {% load crispy_forms_tags %}
+    {% load int_rank %}
     <div class="container">
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -45,28 +46,29 @@
                             {# item_detail_contents.html を参考に必要な項目を追加してください #}
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>1_文字列</p>
+                                    <p>平均ダメージ average damage</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_1|default_if_none:"未入力" }}</p>
+                                    <p>{{ item.sample_4|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>2_メモ</p>
+                                    <p>K/D</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_2|default_if_none:"未入力" }}</p>
+                                    <p>{{ item.sample_5|default_if_none:"未入力" }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5 col-sm-3">
-                                    <p>3_整数</p>
+                                    <p>ランク rank</p>
                                 </div>
                                 <div class="col-7 col-sm-9">
-                                    <p>{{ item.sample_3|default_if_none:"未入力" }}</p>
+                                    <p>{{item.sample_9|int_rank|default_if_none:"未入力"}}</p>
                                 </div>
                             </div>
+                            <!--
                             <div class="row">
                                 <div class="col-5 col-sm-3">
                                     <p>作成者</p>
@@ -75,6 +77,7 @@
                                     <p>{{ item.created_by.get_full_name }}</p>
                                 </div>
                             </div>
+                            
                             <div class="row">
                                 <div class="col-5 col-sm-3">
                                     <p>作成時間</p>
@@ -83,6 +86,7 @@
                                     <p>{{ item.created_at|date:"Y/m/d G:i:s" }}</p>
                                 </div>
                             </div>
+                            -->
                             <div class="row">
                                 <div class="col-12">
                                     <div class="float-right">
